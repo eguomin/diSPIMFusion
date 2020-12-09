@@ -1,24 +1,28 @@
 macro "dispimfusion"{
-// This macro is to create a User Interface within ImageJ and 
-// launch the spimfusion.exe console and pass arguments to the console
+// This macro is to create a User Interface within ImageJ, and 
+// launch the spimFusionBatch.exe console and pass arguments to the console
 // Min Guo, May 2019
 
 //=================================================================
 //=========You can customize your default parameters here!!!=======
 //=================================================================
 //*** Default setup****
+//Objective type:40x,0.8NA; or 10x,0.3NA; or 50x adiSPIM
+OBJx = 40; // 40: 40x,0.8NA; 10: 10x,0.3NA; 50: adiSPIM, 50x, 1.1NA and 28.6x, 0.71NA
 // Default folders/files for CUDA app
-appPath = ".\\diSPIMFusion\\cudaApp\\";
-filePSFA = ".\\diSPIMFusion\\PSFA.tif";
-filePSFB = ".\\diSPIMFusion\\PSFB.tif";
-filePSFA_bp = ".\\diSPIMFusion\\PSFA_BP.tif";
-filePSFB_bp = ".\\diSPIMFusion\\PSFB_BP.tif";
+appPath = "./diSPIMFusion/cudaLib/";
+cudaExe = appPath + "bin/win/spimFusionBatch.exe";
+filePSFA = appPath + "data/PSFA.tif";
+filePSFB = appPath + "data/PSFB.tif";
+filePSFA_bp = appPath + "data/PSFA_BP.tif";
+filePSFB_bp = appPath + "data/PSFB_BP.tif";
 
 // Default parameters
 colorChoice="Single color";
 
 nameA = "SPIMA_";
 nameB = "SPIMB_";
+//pixel size of tiff images
 pixelSizeAx = 0.1625;
 pixelSizeAy = 0.1625;
 pixelSizeAz = 1;
@@ -26,8 +30,9 @@ pixelSizeBx = 0.1625;
 pixelSizeBy = 0.1625;
 pixelSizeBz = 1;
 
-regChoice = "All images dependently"; // registration mode
-rotChoice = "-90 deg by Y-axis"; // rotation angle for SPIMB
+regChoice = "All images dependently"; // registration mode: 
+									// "All images dependently", "All images independently",  "One image only", "No registration"
+rotChoice = "-90 deg by Y-axis"; // rotation angle for SPIMB: "No rotation", "90 deg by Y-axis",  "-90 deg by Y-axis"
 tmxChoice= "Default"; //flagInitialTmx = 0;
 FTOL = 0.0001;
 itLimit= 3000;
@@ -40,11 +45,37 @@ saveXProj = false; //
 saveYProj = false; //
 saveZProj = true; //
 saveXaxisProj = false; //
-saveYaxisProj = false; //
+saveYaxisProj = true; //
 
 outputBit = "16 bit"; // output data bit: 16 or 32
 dQuery = false; // show GPU information or not
 deviceNum = 0; // GPU device #
+
+if(OBJx == 10){
+	// if 10x objecttive
+	filePSFA = appPath + "data/PSFA_10x.tif"; // directory to PSFA: 10x,0.3NA
+	filePSFB = appPath + "data/PSFB_10x.tif"; // directory to PSFB: 10x,0.3NA
+	pixelSizeAx = 0.65; // um
+	pixelSizeAy = 0.65;
+	pixelSizeAz = 3;
+	pixelSizeBx = 0.65; // um
+	pixelSizeBy = 0.65;
+	pixelSizeBz = 3;
+}
+
+if(OBJx == 50){
+	// if 50x objecttive, asymmetrical diSPIM
+	filePSFA = appPath + "data/PSFA_1p1NA.tif"; // directory to PSFA: 50x,1.1NA
+	filePSFB = appPath + "data/PSFB_0p71NA.tif"; // directory to PSFB: 28.6x,0.71NA
+	pixelSizeAx = 0.13; // um
+	pixelSizeAy = 0.13;
+	pixelSizeAz = 0.7686;
+	pixelSizeBx = 0.227; // um
+	pixelSizeBy = 0.227;
+	pixelSizeBz = 1.1701;
+	rotChoice = "-90 deg by Y-axis";//"No rotation"; // rotation angle for SPIMB: "No rotation", "90 deg by Y-axis",  "-90 deg by Y-axis"
+}
+
 //=================================================================
 //===================Customization End!!!!=========================
 //=================================================================
@@ -222,7 +253,7 @@ else if(tmxChoice=="Customized"){
 	fileTmx =  File.openDialog("Select transform matrix file");
 }
 else if(tmxChoice=="2D registration"){
-	flagInitialTmx = 2;
+	flagInitialTmx = 3;
 	fileTmx = "Balabalabala";
 }
 saveRegA = Dialog.getCheckbox(); //true: 1, false: 0
@@ -252,8 +283,6 @@ deviceNum = Dialog.getNumber();
 //appPath = Dialog.getString();
 //filePSFA = Dialog.getString();
 //filePSFB = Dialog.getString();
-
-cudaExe = appPath + "spimfusion.exe";
 
 print("Parameters configuration done!!!\n\n");
 if(multiColor)
