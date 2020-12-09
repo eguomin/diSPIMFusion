@@ -8,10 +8,11 @@ Dual-view inverted Selective Plane Illumination Microscopy (diSPIM) [[1]](#1)[[2
 
 The preprocessing includes several operations on the raw dada at low level to facilitate the further fusion of the images. Additionally, if the data are acquired in a stage-scan mode [[4]](#4), the raw images need to be deskewed to corrrect the distortion and converted to regular lightsheet-scan images.
 
-As an example, we provide [a ImageJ macro code](https://www.dropbox.com/sh/czn4kwzwcgy0s3x/AADipfEsUSwuCsEBg8P7wc4_a?dl=0) along with [a reference](https://www.dropbox.com/sh/czn4kwzwcgy0s3x/AADipfEsUSwuCsEBg8P7wc4_a?dl=0) for preprocesing diSPIM raw data acquired by LabVIEW control software. The macro provide ImageJ based user interface, involving:
+As an example, we provide [a ImageJ macro code](https://github.com/eguomin/diSPIMFusion/blob/master/diSPIM_Preprocessing.ijm) along with [a reference](https://github.com/eguomin/diSPIMFusion/blob/master/diSPIM_Preprocessing_Referrence.pdf) for preprocesing diSPIM raw data acquired by LabVIEW control software. The macro provide ImageJ based user interface, involving:
 - Background subtraction.
 - Deskewing: optionally for stage-scan data.
 - ROI cropping: to make the images initially aligned and/or more compact to save processing time and storage.
+- Maximum intensity projection (MIP).
 - 3D orentiation: SPIMB image rotation and interpolation.
 
 It is supposed to work within Fiji that has ImageJ version 1.48c or later, on a PC with Windows 7 or 10 OS. Tested enveronment: Fiji(Life-Line version, 2013 July 15), Windows 7 and 10.
@@ -32,7 +33,7 @@ For source code of the `diSPIMFusion` package, please go to the GitHub repositor
 
 ## Usage
 
-Download the [diSPIMFusion](https://www.dropbox.com/sh/czn4kwzwcgy0s3x/AADipfEsUSwuCsEBg8P7wc4_a?dl=0) package along with the test data, and check the user manual [diSPIMFusion_UI_UserManual.pdf](https://www.dropbox.com/sh/czn4kwzwcgy0s3x/AADipfEsUSwuCsEBg8P7wc4_a?dl=0).
+Download the [diSPIMFusion](https://www.dropbox.com/sh/czn4kwzwcgy0s3x/AADipfEsUSwuCsEBg8P7wc4_a?dl=0) package along with the test data, and check the user manual [diSPIMFusion_UI_UserManual.pdf](https://github.com/eguomin/diSPIMFusion/blob/master/diSPIMFusion_UI_UserManual.pdf).
 
 ### System Requirements
 
@@ -48,7 +49,7 @@ This is the default option when `diSPIMFusion` package was originally developed.
 
 > a) Copy the package folder `/diSPIMFusion` to `/Fiji.app` folder.
 
-> b) Open `diSPIMFusion_UI.ijm` file within Fiji and run it following the associated user manual [diSPIMFusion_UI_UserManual.pdf](https://www.dropbox.com/sh/czn4kwzwcgy0s3x/AADipfEsUSwuCsEBg8P7wc4_a?dl=0).
+> b) Open `diSPIMFusion_UI.ijm` file within Fiji and run it following the associated user manual [diSPIMFusion_UI_UserManual.pdf](https://github.com/eguomin/diSPIMFusion/blob/master/diSPIMFusion_UI_UserManual.pdf).
 
 The default settings are configured for the test data, users can also customize parameters for their own data by modifying the first lines in the macro file `diSPIMFusion_UI.ijm`. 
 
