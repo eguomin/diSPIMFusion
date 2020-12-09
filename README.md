@@ -1,7 +1,8 @@
 # Overview
 
 Dual-view inverted Selective Plane Illumination Microscopy (diSPIM) [[1]](#1)[[2]](#2) enables isotropic 3D resolution by fusing two view images acquired by two orthogonally configured arms. This repository provides a brief description and a collection of code on processing diSPIM data with GPU implementation [[3]](#3), mainly including two parts:
-- **Image preprocessing**: basically ROI selection, background removal, image deskewing, etc.
+
+- **Image preprocessing**: background removal, ROI selection, image deskewing, etc.
 - **Dual-view image fusion**: registration and joint deconvolution, this is the major computation part, also refered to as `diSPIMFusion`.
 
 ## Image Prepocessing
@@ -9,6 +10,7 @@ Dual-view inverted Selective Plane Illumination Microscopy (diSPIM) [[1]](#1)[[2
 The preprocessing includes several operations on the raw dada at low level to facilitate the further fusion of the images. Additionally, if the data are acquired in a stage-scan mode [[4]](#4), the raw images need to be deskewed to corrrect the distortion and converted to regular lightsheet-scan images.
 
 As an example, we provide [a ImageJ macro code](https://github.com/eguomin/diSPIMFusion/blob/master/diSPIM_Preprocessing.ijm) along with [a reference](https://github.com/eguomin/diSPIMFusion/blob/master/diSPIM_Preprocessing_Referrence.pdf) for preprocesing diSPIM raw data acquired by LabVIEW control software. The macro provide ImageJ based user interface, involving:
+
 - Background subtraction.
 - Deskewing: optionally for stage-scan data.
 - ROI cropping: to make the images initially aligned and/or more compact to save processing time and storage.
@@ -22,6 +24,7 @@ Depending on the microscope control software (Micro-Manager or LabVIEW) and the 
 ## Dual-view Image Fusion
 
 The fusion of the dual-view images mainly includes the image registartion and joint deconvolution, and is computational heavy. So GPU-based parallel computing has been developed using C/C++ and CUDA, and compiled to console applications at the user level. Along with a few other macros/scripts, the applications are deployed as a ready-to-use portable package [`diSPIMFusion`](https://www.dropbox.com/sh/czn4kwzwcgy0s3x/AADipfEsUSwuCsEBg8P7wc4_a?dl=0), involving:
+
 - 3D orentiation: image rotation and interpolation.
 - Image registration.
 - Joint deconvolution.
@@ -48,7 +51,6 @@ Download the [`diSPIMFusion`](https://www.dropbox.com/sh/czn4kwzwcgy0s3x/AADipfE
 This is the default option when `diSPIMFusion` package was originally developed. It uses the ImageJ macros to create a GUI for setting parameters and then invokes the `spimFusionBatch` application within the package. To run it, [Fiji](https://fiji.sc/) (or [ImageJ](https://imagej.net)) and [GPU driver](https://www.nvidia.com/Download/index.aspx) compatible with CUDA 10.0 (typically the latest NVIDIA driver should be fine) need to be installed, then:
 
 > a) Copy the package folder `/diSPIMFusion` to `/Fiji.app` folder.
-
 > b) Open `diSPIMFusion_UI.ijm` file within Fiji and run it following the associated user manual [diSPIMFusion_UI_UserManual.pdf](https://github.com/eguomin/diSPIMFusion/blob/master/diSPIMFusion_UI_UserManual.pdf).
 
 The default settings are configured for the test data, users can also customize parameters for their own data by modifying the first lines in the macro file `diSPIMFusion_UI.ijm`. 
@@ -76,6 +78,7 @@ In case the Linux PC does not have the CUDA or FFTW installed, users will need t
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:./bin/linux
 sh sh_spimFusionBatch.sh
 ```
+
 **Tested environment:** Windows 10 with NVIDIA Quadro M6000 GPU, Ubuntu 18.04 LTS with NVIDIA Quadro K600.
 
 Please cite our paper [[3]](#3) if you use the code/document provided in this repository.
@@ -83,6 +86,7 @@ Please cite our paper [[3]](#3) if you use the code/document provided in this re
 ## Other Resources
 
 More resources related to diSPIM instrument and data processing: 
+
 - Wiki page for general information of diSPIM: [dispim.org](http://dispim.org/).
 - C/C++ and CUDA source code for `diSPIMFusion` package: [microImageLib](https://github.com/eguomin/microImageLib).
 - MIPAV CPU-based image registration and joint deconvolution:  [MIPAV GenerateFusion](http://dispim.org/software/mipav_generatefusion).
