@@ -46,18 +46,19 @@ Download the [`diSPIMFusion`](https://www.dropbox.com/sh/czn4kwzwcgy0s3x/AADipfE
 
 ### User Interface Options
 
-#### 1. Fiji macro based GUI interface
+#### (Option 1) Fiji macro based GUI interface
 
 This is the default option when `diSPIMFusion` package was originally developed. It uses the ImageJ macros to create a GUI for setting parameters and then invokes the `spimFusionBatch` application within the package. To run it, [Fiji](https://fiji.sc/) (or [ImageJ](https://imagej.net)) and [GPU driver](https://www.nvidia.com/Download/index.aspx) compatible with CUDA 10.0 (typically the latest NVIDIA driver should be fine) need to be installed, then:
 
 > a) Copy the package folder `/diSPIMFusion` to `/Fiji.app` folder.
+
 > b) Open `diSPIMFusion_UI.ijm` file within Fiji and run it following the associated user manual [diSPIMFusion_UI_UserManual.pdf](https://github.com/eguomin/diSPIMFusion/blob/master/diSPIMFusion_UI_UserManual.pdf).
 
 The default settings are configured for the test data, users can also customize parameters for their own data by modifying the first lines in the macro file `diSPIMFusion_UI.ijm`. 
 
 **Tested environments:** Windows 10 with NVIDIA Quadro M6000.
 
-#### 2. Command line based interface
+#### (Option 2) Command line based interface
 
 The console applications can be directly luanched by commands via the Windows or Linux terminal. Users may find the applications in the folder `/diSPIMFusion/cudaLib/bin` for Windows or Linux OS. The `spimFusionBatch` (also used in the Fiji macro option) processes time-lapse images, users may refer to the user manual for Fiji macro option. For other applications, users can use command with option `-h` or `-help` to find the introduction and manual, e.g.
 ```posh
