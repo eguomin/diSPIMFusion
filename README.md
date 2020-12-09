@@ -21,7 +21,7 @@ Depending on the microscope control software (Micro-Manager or LabVIEW) and the 
 
 ## Dual-view Image Fusion
 
-The fusion of the dual-view images mainly includes the image registartion and joint deconvolution, and is computational heavy. So GPU-based parallel computing has been developed using C/C++ and CUDA, and compiled to console applications at the user level. Along with a few other macros/scripts, the applications are distributed as a ready-to-use portable package [`diSPIMFusion`](https://www.dropbox.com/sh/czn4kwzwcgy0s3x/AADipfEsUSwuCsEBg8P7wc4_a?dl=0), involving:
+The fusion of the dual-view images mainly includes the image registartion and joint deconvolution, and is computational heavy. So GPU-based parallel computing has been developed using C/C++ and CUDA, and compiled to console applications at the user level. Along with a few other macros/scripts, the applications are deployed as a ready-to-use portable package [`diSPIMFusion`](https://www.dropbox.com/sh/czn4kwzwcgy0s3x/AADipfEsUSwuCsEBg8P7wc4_a?dl=0), involving:
 - 3D orentiation: image rotation and interpolation.
 - Image registration.
 - Joint deconvolution.
