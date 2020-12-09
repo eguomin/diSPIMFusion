@@ -9,7 +9,7 @@ Dual-view inverted Selective Plane Illumination Microscopy (diSPIM) [[1]](#1)[[2
 
 The preprocessing includes several operations on the raw dada at low level to facilitate the further fusion of the images. Additionally, if the data are acquired in a stage-scan mode [[4]](#4), the raw images need to be deskewed to corrrect the distortion and converted to regular lightsheet-scan images.
 
-As an example, we provide [a ImageJ macro code](https://github.com/eguomin/diSPIMFusion/blob/master/diSPIM_Preprocessing.ijm) along with [a reference](https://github.com/eguomin/diSPIMFusion/blob/master/diSPIM_Preprocessing_Referrence.pdf) for preprocesing diSPIM raw data acquired by LabVIEW control software. The macro provide ImageJ based user interface, involving:
+As an example, we provide [a ImageJ macro code](https://github.com/eguomin/diSPIMFusion/blob/master/diSPIM_Preprocessing.ijm) along with [a reference](https://github.com/eguomin/diSPIMFusion/blob/master/diSPIM_Preprocessing_Referrence.pdf) for preprocesing diSPIM raw data acquired by LabVIEW control software. The macro provides ImageJ-based user interface, including:
 
 - Background subtraction.
 - Deskewing: optionally for stage-scan data.
@@ -23,7 +23,7 @@ Depending on the microscope control software (Micro-Manager or LabVIEW) and the 
 
 ## Dual-view Image Fusion
 
-The fusion of the dual-view images mainly includes the image registartion and joint deconvolution, and is computational heavy. So GPU-based parallel computing has been developed using C/C++ and CUDA, and compiled to console applications at the user level. Along with a few other macros/scripts, the applications are deployed as a ready-to-use portable package [`diSPIMFusion`](https://www.dropbox.com/sh/czn4kwzwcgy0s3x/AADipfEsUSwuCsEBg8P7wc4_a?dl=0), involving:
+The fusion of the dual-view images mainly includes the image registartion and joint deconvolution, and is computational heavy. So GPU-based parallel computing has been developed using C/C++ and CUDA, and compiled to console applications at the user level. Along with a few other macros/scripts, the applications are deployed as a ready-to-use portable package [`diSPIMFusion`](https://www.dropbox.com/sh/czn4kwzwcgy0s3x/AADipfEsUSwuCsEBg8P7wc4_a?dl=0), including:
 
 - 3D orentiation: image rotation and interpolation.
 - Image registration.
@@ -46,13 +46,13 @@ Download the [`diSPIMFusion`](https://www.dropbox.com/sh/czn4kwzwcgy0s3x/AADipfE
 
 ### User Interface Options
 
-#### (Option 1) Fiji macro based GUI interface
+#### (Option 1) Fiji macro-based GUI interface
 
-This is the default option when `diSPIMFusion` package was originally developed. It uses the ImageJ macros to create a GUI for setting parameters and then invokes the `spimFusionBatch` application within the package. To run it, [Fiji](https://fiji.sc/) (or [ImageJ](https://imagej.net)) and [GPU driver](https://www.nvidia.com/Download/index.aspx) compatible with CUDA 10.0 (typically the latest NVIDIA driver should be fine) need to be installed, then:
+This is the default option when `diSPIMFusion` package was originally developed. It uses the ImageJ macro to create a GUI for setting parameters and then invokes the application `spimFusionBatch` within the package. To run it, [Fiji](https://fiji.sc/) (or [ImageJ](https://imagej.net)) and [GPU driver](https://www.nvidia.com/Download/index.aspx) compatible with CUDA 10.0 (typically the latest NVIDIA driver should be fine) need to be installed, then:
 
-> a) Copy the package folder `/diSPIMFusion` to `/Fiji.app` folder.
+> a) Copy the package folder `/diSPIMFusion` to Fiji's main path `/Fiji.app`.
 
-> b) Open `diSPIMFusion_UI.ijm` file within Fiji and run it following the associated user manual [diSPIMFusion_UI_UserManual.pdf](https://github.com/eguomin/diSPIMFusion/blob/master/diSPIMFusion_UI_UserManual.pdf).
+> b) Open macro file `diSPIMFusion_UI.ijm` within Fiji and run it following the user manual [diSPIMFusion_UI_UserManual.pdf](https://github.com/eguomin/diSPIMFusion/blob/master/diSPIMFusion_UI_UserManual.pdf).
 
 The default settings are configured for the test data, users can also customize parameters for their own data by modifying the first lines in the macro file `diSPIMFusion_UI.ijm`. 
 
@@ -60,7 +60,7 @@ The default settings are configured for the test data, users can also customize 
 
 #### (Option 2) Command line based interface
 
-The console applications can be directly luanched by commands via the Windows or Linux terminal. Users may find the applications in the folder `/diSPIMFusion/cudaLib/bin` for Windows or Linux OS. The `spimFusionBatch` (also used in the Fiji macro option) processes time-lapse images, users may refer to the user manual for Fiji macro option. For other applications, users can use command with option `-h` or `-help` to find the introduction and manual, e.g.
+The applications can be directly luanched by commands via the Windows or Linux terminal. Users may find the applications in the folder `/diSPIMFusion/cudaLib/bin` for Windows and Linux platforms. The `spimFusionBatch` (also used in the Fiji macro-based option) processes time-lapse images, users may refer to the user manual for Fiji macro option. For other applications, users can use command with option `-h` or `-help` to find the introduction and manual for each application, e.g.
 ```posh
 spimFusionBatch -h
 ```
@@ -82,8 +82,6 @@ sh sh_spimFusionBatch.sh
 
 **Tested environment:** Windows 10 with NVIDIA Quadro M6000 GPU, Ubuntu 18.04 LTS with NVIDIA Quadro K600.
 
-Please cite our paper [[3]](#3) if you use the code/document provided in this repository.
-
 ## Other Resources
 
 More resources related to diSPIM instrument and data processing: 
@@ -91,6 +89,8 @@ More resources related to diSPIM instrument and data processing:
 - Wiki page for general information of diSPIM: [dispim.org](http://dispim.org/).
 - C/C++ and CUDA source code for `diSPIMFusion` package: [microImageLib](https://github.com/eguomin/microImageLib).
 - MIPAV CPU-based image registration and joint deconvolution:  [MIPAV GenerateFusion](http://dispim.org/software/mipav_generatefusion).
+
+Please cite our paper [[3]](#3) if you use the diSPIM data processing code and package provided in this repository.
 
 ## References
 
