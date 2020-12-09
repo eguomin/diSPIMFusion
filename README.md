@@ -33,7 +33,7 @@ For source code of the `diSPIMFusion` package, please go to the GitHub repositor
 
 ## Usage
 
-Download the [diSPIMFusion](https://www.dropbox.com/sh/czn4kwzwcgy0s3x/AADipfEsUSwuCsEBg8P7wc4_a?dl=0) package along with the test data, and check the user manual [diSPIMFusion_UI_UserManual.pdf](https://github.com/eguomin/diSPIMFusion/blob/master/diSPIMFusion_UI_UserManual.pdf).
+Download the [`diSPIMFusion`](https://www.dropbox.com/sh/czn4kwzwcgy0s3x/AADipfEsUSwuCsEBg8P7wc4_a?dl=0) package along with the test data, and check the user manual [diSPIMFusion_UI_UserManual.pdf](https://github.com/eguomin/diSPIMFusion/blob/master/diSPIMFusion_UI_UserManual.pdf).
 
 ### System Requirements
 
@@ -87,7 +87,7 @@ More resources related to diSPIM instrument and data processing:
 - C/C++ and CUDA source code for `diSPIMFusion` package: [microImageLib](https://github.com/eguomin/microImageLib).
 - MIPAV CPU-based image registration and joint deconvolution:  [MIPAV GenerateFusion](http://dispim.org/software/mipav_generatefusion).
 
-## Reference
+## References
 
 <a id="1">[1]</a>
 Yicong Wu *et al.* (2013).
