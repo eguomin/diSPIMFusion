@@ -40,7 +40,7 @@ Download the [`diSPIMFusion`](https://www.dropbox.com/sh/czn4kwzwcgy0s3x/AADipfE
 
 ### System Requirements
 
-- Windows 10 or Linux OS. 
+- Windows 10 or Linux OS.
 - NVIDIA GPU
 - Optional: Fiji or ImageJ.
 
@@ -54,37 +54,44 @@ This is the default option when `diSPIMFusion` package was originally developed.
 
 > b) Open macro file `diSPIMFusion_UI.ijm` within Fiji and run it following the user manual [diSPIMFusion_UI_UserManual.pdf](https://github.com/eguomin/diSPIMFusion/blob/master/diSPIMFusion_UI_UserManual.pdf).
 
-The default settings are configured for the test data, users can also customize parameters for their own data by modifying the first lines in the macro file `diSPIMFusion_UI.ijm`. 
+The default settings are configured for the test data, users can also customize parameters for their own data by modifying the first lines in the macro file `diSPIMFusion_UI.ijm`.
 
 **Tested environments:** Windows 10 with NVIDIA Quadro M6000.
 
 #### (Option 2) Command line based interface
 
 The applications can be directly luanched by commands via the Windows or Linux terminal. Users may find the applications in the folder `/diSPIMFusion/cudaLib/bin` for Windows and Linux platforms. The `spimFusionBatch` (also used in the Fiji macro-based option) processes time-lapse images, users may refer to the user manual for Fiji macro option. For other applications, users can use command with option `-h` or `-help` to find the introduction and manual for each application, e.g.
+
 ```posh
 spimFusionBatch -h
 ```
+
 We also provide a few example scripts consisting of a group of *cmd* or *shell* commands that invoke the binary applications with default configurations for the test dataset. To run the scripts, users need to open the command terminal and get to the directory of the scripts, i.e., the folder `./diSPIMFusion/cudaLib`.
 
-1) For Windows PC, run any of the `cmd_xx.bat` scripts, e.g.
-```posh
-cmd_spimFusionBatch.bat
-```
-2) For Linux PC, run any of the `sh_xx.sh` scripts, e.g.
-```posh
-sh sh_spimFusionBatch.sh
-```
-In case the Linux PC does not have the CUDA or FFTW installed, users will need to add the dependencies directory to the path variable *LD_LIBRARY_PATH* so as to use the libraries provided within the compiled package, e.g., use command:
-```posh
-export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:./bin/linux
-sh sh_spimFusionBatch.sh
-```
+1. For Windows PC, run any of the `cmd_xx.bat` scripts, e.g.
+
+    ```posh
+    cmd_spimFusionBatch.bat
+    ```
+
+2. For Linux PC, run any of the `sh_xx.sh` scripts, e.g.
+    
+    ```posh
+    sh sh_spimFusionBatch.sh
+    ```
+    
+    In case the Linux PC does not have the CUDA or FFTW installed, users will need to add the dependencies directory to the path variable *LD_LIBRARY_PATH* so as to use the libraries provided within the compiled package, e.g., use command:
+
+    ```posh
+    export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:./bin/linux
+    sh sh_spimFusionBatch.sh
+    ```
 
 **Tested environment:** Windows 10 with NVIDIA Quadro M6000 GPU, Ubuntu 18.04 LTS with NVIDIA Quadro K600.
 
 ## Other Resources
 
-More resources related to diSPIM instrument and data processing: 
+More resources related to diSPIM instrument and data processing:
 
 - Wiki page for general information of diSPIM: [dispim.org](http://dispim.org/).
 - C/C++ and CUDA source code for `diSPIMFusion` package: [microImageLib](https://github.com/eguomin/microImageLib).
@@ -95,18 +102,17 @@ Please cite our paper [[3]](#3) if you use the diSPIM data processing code and p
 ## References
 
 <a id="1">[1]</a>
-Yicong Wu *et al.* (2013).
-"Spatially isotropic four-dimensional imaging with dual-view plane illumination microscopy." Nature biotechnology 31.11 (2013): 1032-1038. https://doi.org/10.1038/nbt.2713
+Yicong Wu, *et al*. (2013).
+"[Spatially isotropic four-dimensional imaging with dual-view plane illumination microscopy](https://doi.org/10.1038/nbt.2713)." Nature biotechnology 31.11 (2013): 1032-1038.
 
 <a id="2">[2]</a>
-Abhishek Kumar *et al.* (2014).
-"Dual-view plane illumination microscopy for rapid and spatially isotropic imaging." Nature protocols 9.11 (2014): 2555-2573. https://doi.org/10.1038/nprot.2014.172
+Abhishek Kumar, *et al*.
+"[Dual-view plane illumination microscopy for rapid and spatially isotropic imaging](https://doi.org/10.1038/nprot.2014.172)." Nature protocols 9.11 (2014): 2555-2573.
 
 <a id="3">[3]</a>
-Min Guo *et al.* (2020).
-"Rapid image deconvolution and multiview fusion for optical microscopy." Nature Biotechnology (2020): 1-10. https://doi.org/10.1038/s41587-020-0560-x
+Min Guo, *et al*.
+"[Rapid image deconvolution and multiview fusion for optical microscopy](https://doi.org/10.1038/s41587-020-0560-x)." Nature Biotechnology (2020): 1-10.
 
 <a id="4">[4]</a>
-Abhishek Kumar *et al.* (2016).
-"Using stage-and slit-scanning to improve contrast and optical sectioning in dual-view inverted light sheet microscopy (diSPIM)." The Biological Bulletin 231.1 (2016): 26-39. https://doi.org/10.1086/689589
-
+Abhishek Kumar, *et al*.
+"[Using stage-and slit-scanning to improve contrast and optical sectioning in dual-view inverted light sheet microscopy (diSPIM)](https://doi.org/10.1086/689589)." The Biological Bulletin 231.1 (2016): 26-39.
