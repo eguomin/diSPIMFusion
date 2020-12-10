@@ -114,7 +114,7 @@ Abhishek Kumar, *et al*.
 
 <a id="3">[3]</a>
 Min Guo, *et al*.
-"[Rapid image deconvolution and multiview fusion for optical microscopy](https://doi.org/10.1038/s41587-020-0560-x)." Nature Biotechnology (2020): 1-10.
+"[Rapid image deconvolution and multiview fusion for optical microscopy](https://doi.org/10.1038/s41587-020-0560-x)." Nature Biotechnology 38.11 (2020): 1337-1346.
 
 <a id="4">[4]</a>
 Abhishek Kumar, *et al*.
