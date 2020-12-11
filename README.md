@@ -3,14 +3,14 @@ diSPIM Data Processing (diSPIMFusion)
 
 ## Overview
 
-Dual-view inverted Selective Plane Illumination Microscopy (diSPIM) [[1]](#1)[[2]](#2) enables isotropic 3D resolution by fusing two view images acquired by two orthogonally configured arms. This repository provides a brief description and a collection of code on processing diSPIM data with GPU implementation [[3]](#3), mainly including two parts:
+Dual-view inverted Selective Plane Illumination Microscopy (diSPIM) [[1]](#1)[[2]](#2) enables isotropic 3D resolution by fusing two volumetric views acquired by two orthogonally configured arms. This repository provides a brief description and a collection of code to process diSPIM data with GPU implementation [[3]](#3), mainly including two parts:
 
 - **Image preprocessing**: background removal, ROI selection, image deskewing, etc.
-- **Dual-view image fusion**: registration and joint deconvolution, this is the major computation part, also refered to as `diSPIMFusion`.
+- **Dual-view image fusion**: registration and joint deconvolution, this is the major computational part, also refered to as `diSPIMFusion`.
 
-## Image Prepocessing
+## Image Preprocessing
 
-The preprocessing includes several operations on the raw dada at low level to facilitate the further fusion of the images. Additionally, if the data are acquired in a stage-scan mode [[4]](#4), the raw images need to be deskewed to corrrect the distortion and converted to regular lightsheet-scan images.
+The preprocessing includes several operations on the raw data at low level to facilitate the further fusion of the images. Additionally, if the data are acquired in a stage-scan mode [[4]](#4), the raw images need to be deskewed to corrrect the distortion and converted to regular lightsheet-scan images.
 
 As an example, we provide [a ImageJ macro code](diSPIM_Preprocessing.ijm) along with [a reference](diSPIM_Preprocessing_Referrence.pdf) for preprocesing diSPIM raw data acquired by LabVIEW control software. The macro provides ImageJ-based user interface, including:
 
@@ -18,22 +18,22 @@ As an example, we provide [a ImageJ macro code](diSPIM_Preprocessing.ijm) along 
 - Deskewing: optionally for stage-scan data.
 - ROI cropping: to make the images initially aligned and/or more compact to save processing time and storage.
 - Maximum intensity projection (MIP).
-- 3D orentiation: SPIMB image rotation and interpolation.
+- 3D orentation: SPIMB image rotation and interpolation.
 
-It is supposed to work within Fiji that has ImageJ version 1.48c or later, on a PC with Windows 7 or 10 OS. Tested enveronment: Fiji(Life-Line version, 2013 July 15), Windows 7 and 10.
+This works within Fiji that has ImageJ version 1.48c or later, on a PC with Windows 7 or 10 OS. Tested environment: Fiji(Life-Line version, 2013 July 15), Windows 7 and 10.
 
 Depending on the microscope control software (Micro-Manager or LabVIEW) and the acquisition configuration, the preprocessing may vary and users may correspondingly need to customize their own code.
 
 ## Dual-view Image Fusion
 
-The fusion of the dual-view images mainly includes the image registartion and joint deconvolution, and is computational heavy. So GPU-based parallel computing has been developed using C/C++ and CUDA, and compiled to console applications at the user level. Along with a few other macros/scripts, the applications are deployed as a ready-to-use portable package [diSPIMFusion](https://www.dropbox.com/sh/czn4kwzwcgy0s3x/AADipfEsUSwuCsEBg8P7wc4_a?dl=0), including:
+The fusion of the dual-view images mainly includes the image registration and joint deconvolution, and is computational heavy. So GPU-based parallel computing has been developed using C/C++ and CUDA, and compiled to console applications at the user level. Along with a few other macros/scripts, the applications are deployed as a ready-to-use portable package [diSPIMFusion](https://www.dropbox.com/sh/czn4kwzwcgy0s3x/AADipfEsUSwuCsEBg8P7wc4_a?dl=0), including:
 
-- 3D orentiation: image rotation and interpolation.
+- 3D orentation: image rotation and interpolation.
 - Image registration.
 - Joint deconvolution.
 - Maximum intensity projection (MIP): choices for 2D and 3D MIP.
 
-The `diSPIMFusion` package provides several options, either GUI interface or command line, to use the applications across Windows and Linux platforms. It is suitalbe for processing images less than 4 GB (single volume after isotropizing the voxels, 16-bit) depending on the actual available GPU memory. For big images (single volume > 4 GB) such as cleared tissue data, users may refer to [the big data processing pipeline](https://github.com/eguomin/regDeconProject) in another GitHub repository.
+The `diSPIMFusion` package provides several options, either GUI interface or command line, for use across Windows and Linux platforms. It is suitalbe for processing images less than 4 GB (single volume after isotropizing the voxels, 16-bit) depending on the actual available GPU memory. For big images (single volume > 4 GB) such as cleared tissue data, users may refer to [the big data processing pipeline](https://github.com/eguomin/regDeconProject) in another GitHub repository.
 
 For source code of the `diSPIMFusion` package, please go to the GitHub repository: [microImageLib](https://github.com/eguomin/microImageLib).
 
@@ -63,7 +63,7 @@ The default settings are configured for the test data, users can also customize 
 
 #### (Option 2) Command line based interface
 
-The applications can be directly luanched by commands via the Windows or Linux terminal. Users may find the applications in the folder `/diSPIMFusion/cudaLib/bin` for Windows and Linux platforms. The `spimFusionBatch` (also used in the Fiji macro-based option) processes time-lapse images, users may refer to the user manual for Fiji macro option. For other applications, users can use command with option `-h` or `-help` to find the introduction and manual for each application, e.g.
+The applications can be directly launched by commands via the Windows or Linux terminal. Users may find the applications in the folder `/diSPIMFusion/cudaLib/bin` for Windows and Linux platforms. The `spimFusionBatch` (also used in the Fiji macro-based option) processes time-lapse images, users may refer to the user manual for Fiji macro option. For other applications, users can use command with option `-h` or `-help` to find the introduction and manual for each application, e.g.
 
 ```posh
 spimFusionBatch -h
