@@ -33,7 +33,7 @@ The fusion of the dual-view images mainly includes the image registartion and jo
 - Joint deconvolution.
 - Maximum intensity projection (MIP): choices for 2D and 3D MIP.
 
-The `diSPIMFusion` package provides several options, either GUI interface or command line, to use the applications cross Windows and Linux platforms. It is suitalbe for processing images less than 4 GB (single volume after isotropizing the voxels, 16-bit) depending on the actual available GPU memory. For big images (single volume > 4 GB) such as cleared tissue data, users may refer to [the big data processing pipeline](https://github.com/eguomin/regDeconProject) in another GitHub repository.
+The `diSPIMFusion` package provides several options, either GUI interface or command line, to use the applications across Windows and Linux platforms. It is suitalbe for processing images less than 4 GB (single volume after isotropizing the voxels, 16-bit) depending on the actual available GPU memory. For big images (single volume > 4 GB) such as cleared tissue data, users may refer to [the big data processing pipeline](https://github.com/eguomin/regDeconProject) in another GitHub repository.
 
 For source code of the `diSPIMFusion` package, please go to the GitHub repository: [microImageLib](https://github.com/eguomin/microImageLib).
 
