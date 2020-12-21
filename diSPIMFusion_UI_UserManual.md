@@ -64,7 +64,7 @@ The [**diSPIMFusion**](https://www.dropbox.com/sh/czn4kwzwcgy0s3x/AADipfEsUSwuCs
 
     The panel contains all parameters that are needed for the executable apps. Users can modify any of the parameters at this step. The panel along with the explanations for the parameters are shown in Fig. 4.
 
-    <center><img width="500" src="res/Fig4.png"></center>
+    <center><img width="550" src="res/Fig4.png"></center>
     
     <div align="center">
     Fig. 4, the diSPIMFusion GUI.
