@@ -39,7 +39,7 @@ For source code of the `diSPIMFusion` package, please go to the GitHub repositor
 
 ## Usage
 
-Download the `diSPIMFusion` latest release verion v1.1.0: [diSPIMFusion.zip](https://github.com/eguomin/diSPIMFusion/releases/tag/V1.1.0) package along with the test data, and check the user manual [diSPIMFusion_UI_UserManual](diSPIMFusion_UI_UserManual.md).
+Download the latest release verion v1.1.0: [diSPIMFusion.zip](https://github.com/eguomin/diSPIMFusion/releases/tag/V1.1.0) package along with the test data, and check the user manual [diSPIMFusion_UI_UserManual](diSPIMFusion_UI_UserManual.md).
 
 ### System Requirements
 
