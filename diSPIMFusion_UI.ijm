@@ -123,10 +123,13 @@ Dialog.addString("ImageA Name",nameA,20);
 Dialog.addString("ImageB Name",nameB,20);
 Dialog.addString("Output Directory",pathOutput,50);
 
-Dialog.addNumber("Start #", imageNumStart);
-Dialog.addNumber("End #", imageNumEnd);
-Dialog.addNumber("Interval", imageNumInterval);
-Dialog.addNumber("Test #", imageNumStart);
+Dialog.addNumber("Range:  Start #", imageNumStart,0,4,"   End #");
+Dialog.setInsets(-28, 100, 0);
+Dialog.addNumber("", imageNumEnd,0,4,"  Interval");
+Dialog.setInsets(-28, 200, 0);
+Dialog.addNumber("", imageNumInterval,0,4,"  Test #");
+Dialog.setInsets(-28, 300, 0);
+Dialog.addNumber("", imageNumStart,0,4," ");
 Dialog.addMessage("Input Pixel Size");
 Dialog.addNumber("ImageA x, y, z", pixelSizeAx,4,6,"um");
 Dialog.setInsets(-28, 100, 0);
@@ -140,7 +143,7 @@ Dialog.setInsets(-28, 200, 0);
 Dialog.addNumber(" ", pixelSizeBz,4,6,"um");
 
 // registration parameters
-Dialog.addMessage("\n");
+//Dialog.addMessage("\n");
 Dialog.addMessage("Set Registration Options");
 items = newArray( "No registration", "One image only", "All images dependently", "All images independently");
 Dialog.setInsets(0, 40, 0);
@@ -158,7 +161,7 @@ Dialog.addCheckbox("Save Reg SPIMB", saveRegB);
 //Dialog.addMessage("\n");
 
 // Joint Deconvolution parameters
-Dialog.addMessage("\n");
+//Dialog.addMessage("\n");
 Dialog.addMessage("Set Deconvolution Options");
 Dialog.addNumber("Iterations", iteration);
 Dialog.setInsets(-28, 40, 0);
@@ -178,8 +181,8 @@ items = newArray("16 bit", "32 bit");
 Dialog.addRadioButtonGroup("Output Image Bit", items, 1, 2, outputBit);
 
 //GPU device settings
-Dialog.addMessage("\n");
-Dialog.addMessage("Set GPU Options");
+//Dialog.addMessage("\n");
+//Dialog.addMessage("Set GPU Options");
 Dialog.setInsets(0, 40, 0);
 Dialog.addCheckbox("Show GUP Device Information", dQuery);
 Dialog.addNumber("GPU Device #", deviceNum);
