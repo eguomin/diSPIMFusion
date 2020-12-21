@@ -39,7 +39,7 @@ For source code of the `diSPIMFusion` package, please go to the GitHub repositor
 
 ## Usage
 
-Download the [diSPIMFusion](https://www.dropbox.com/sh/czn4kwzwcgy0s3x/AADipfEsUSwuCsEBg8P7wc4_a?dl=0) package along with the test data, and check the user manual [diSPIMFusion_UI_UserManual.pdf](diSPIMFusion_UI_UserManual.pdf).
+Download the [diSPIMFusion](https://www.dropbox.com/sh/czn4kwzwcgy0s3x/AADipfEsUSwuCsEBg8P7wc4_a?dl=0) package along with the test data, and check the user manual [diSPIMFusion_UI_UserManual](diSPIMFusion_UI_UserManual.md).
 
 ### System Requirements
 
@@ -49,13 +49,13 @@ Download the [diSPIMFusion](https://www.dropbox.com/sh/czn4kwzwcgy0s3x/AADipfEsU
 
 ### User Interface Options
 
-#### (Option 1) Fiji macro-based GUI interface
+#### (Option 1) ImageJ macro-based GUI interface
 
 This is the default option when `diSPIMFusion` package was originally developed. It uses the ImageJ macro to create a GUI for setting parameters and then invokes the application `spimFusionBatch` within the package. To run it, [Fiji](https://fiji.sc/) (or [ImageJ](https://imagej.net)) and [GPU driver](https://www.nvidia.com/Download/index.aspx) compatible with CUDA 10.0 (typically the latest NVIDIA driver should be fine) need to be installed, then:
 
 > a) Copy the package folder `/diSPIMFusion` to Fiji's main path `/Fiji.app`.
 
-> b) Open macro file `diSPIMFusion_UI.ijm` within Fiji and run it following the user manual [diSPIMFusion_UI_UserManual.pdf](diSPIMFusion_UI_UserManual.pdf).
+> b) Open macro file `diSPIMFusion_UI.ijm` within Fiji and run it following the user manual [diSPIMFusion_UI_UserManual](diSPIMFusion_UI_UserManual.md).
 
 The default settings are configured for the test data, users can also customize parameters for their own data by modifying the first lines in the macro file `diSPIMFusion_UI.ijm`.
 
@@ -63,7 +63,7 @@ The default settings are configured for the test data, users can also customize 
 
 #### (Option 2) Command line based interface
 
-The applications can be directly launched by commands via the Windows or Linux terminal. Users may find the applications in the folder `/diSPIMFusion/cudaLib/bin` for Windows and Linux platforms. The `spimFusionBatch` (also used in the Fiji macro-based option) processes time-lapse images, users may refer to the user manual for Fiji macro option. For other applications, users can use command with option `-h` or `-help` to find the introduction and manual for each application, e.g.
+The applications can be directly launched by commands via the Windows or Linux terminal. Users may find the applications in the folder `/diSPIMFusion/cudaLib/bin` for Windows and Linux platforms. The `spimFusionBatch` (also used in the ImageJ macro-based option) processes time-lapse images, users may refer to the user manual for ImageJ macro option. For other applications, users can use command with option `-h` or `-help` to find the introduction and manual for each application, e.g.
 
 ```posh
 spimFusionBatch -h
