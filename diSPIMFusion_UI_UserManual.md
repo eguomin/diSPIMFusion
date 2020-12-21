@@ -57,14 +57,14 @@ The [**diSPIMFusion**](https://www.dropbox.com/sh/czn4kwzwcgy0s3x/AADipfEsUSwuCs
         <center><img width="350" src="res/Fig3.PNG"></center>
         
         <div align="center">
-        Fig. 3, Folder convention of multiple colors data. The “xxx ( )” indicates the name for the folders.
+        Fig. 3, folder convention of multiple colors data. The “xxx ( )” indicates the name for the folders.
         </div>
 
 - **Step 4. Confirm and modify the parameters in the next pop-up panel**.
 
     The panel contains all parameters that are needed for the executable apps. Users can modify any of the parameters at this step. The panel along with the explanations for the parameters are shown in Fig. 4.
 
-    <center><img width="450" src="res/Fig4.PNG"></center>
+    <center><img width="500" src="res/Fig4.png"></center>
     
     <div align="center">
     Fig. 4, the diSPIMFusion GUI.
@@ -120,7 +120,7 @@ The [**diSPIMFusion**](https://www.dropbox.com/sh/czn4kwzwcgy0s3x/AADipfEsUSwuCs
     <center><img width="450" src="res/Fig9.png"></center>
     
     <div align="center">
-    Fig. 9, Parameters customization in ImageJ macro.
+    Fig. 9, parameters customization in ImageJ macro.
     </div>
 
 4) When doing the fusion, since the x size in view A will need to match the z size in view B, it is suggested to make the x size comparable with z size (physical size in sample) when we acquire the data, or do a cropping to remove the redundant in x size or z size.
@@ -141,7 +141,7 @@ The [**diSPIMFusion**](https://www.dropbox.com/sh/czn4kwzwcgy0s3x/AADipfEsUSwuCs
     <center><img width="400" src="res/Fig10.png"></center>
     
     <div align="center">
-    Fig. 10, The CUDA app gets idle during the processing on the 5th time point images.
+    Fig. 10, the CUDA app gets idle during the processing on the 5th time point images.
     </div>
  
     The bug corresponds to the source code in [spim_fusion_batch.cpp](./src/spim_fusion_batch.cpp) at 
