@@ -34,7 +34,10 @@ The [**diSPIMFusion**](https://www.dropbox.com/sh/czn4kwzwcgy0s3x/AADipfEsUSwuCs
 
 - **Step 2. Choose `Single color` or `Multiple colors` option when the pop-up dialog shows up**.
 
-    <center><img width="100" src="res/Fig1.png"></center>
+    
+    <div align="center">
+    <img width="100" src="res/Fig1.png">
+    </div>
     
     <div align="center">
     Fig. 1, pop-up window for color option.
@@ -44,7 +47,9 @@ The [**diSPIMFusion**](https://www.dropbox.com/sh/czn4kwzwcgy0s3x/AADipfEsUSwuCs
     
     - **For single color**: SPIMA folder --> SPIMB folder --> Output folder.
 
-        <center><img width="450" src="res/Fig2.PNG"></center>
+        <div align="center">
+        <img width="450" src="res/Fig2.PNG">
+        </div>
         
         <div align="center">
         Fig.2, pop-up dialog windows for selecting folder in single color case.
@@ -54,7 +59,9 @@ The [**diSPIMFusion**](https://www.dropbox.com/sh/czn4kwzwcgy0s3x/AADipfEsUSwuCs
 
         Users need to organize the input data as shown in Fig. 3. The program automatically takes each subfolder within the main folder as the input of each color.
         
-        <center><img width="350" src="res/Fig3.PNG"></center>
+        <div align="center">
+        <img width="350" src="res/Fig3.PNG">
+        </div>
         
         <div align="center">
         Fig. 3, folder convention of multiple colors data. The “xxx ( )” indicates the name for the folders.
@@ -64,7 +71,9 @@ The [**diSPIMFusion**](https://www.dropbox.com/sh/czn4kwzwcgy0s3x/AADipfEsUSwuCs
 
     The panel contains all parameters that are needed for the executable apps. Users can modify any of the parameters at this step. The panel along with the explanations for the parameters are shown in Fig. 4.
 
-    <center><img width="550" src="res/Fig4.png"></center>
+    <div align="center">
+    <img width="550" src="res/Fig4.png">
+    </div>
     
     <div align="center">
     Fig. 4, the diSPIMFusion GUI.
@@ -74,7 +83,9 @@ The [**diSPIMFusion**](https://www.dropbox.com/sh/czn4kwzwcgy0s3x/AADipfEsUSwuCs
 
     If `Customized` is selected as initial matrix, users will be guided to choose a matrix file. (A text file is provided within the test data.)
 
-    <center><img width="250" src="res/Fig5.PNG"></center>
+    <div align="center">
+    <img width="250" src="res/Fig5.PNG">
+    </div>
     
     <div align="center">
     Fig. 5, dialog for choosing matrix file.
@@ -84,7 +95,9 @@ The [**diSPIMFusion**](https://www.dropbox.com/sh/czn4kwzwcgy0s3x/AADipfEsUSwuCs
 
     Then the macro calls executable applications and starts the processing. Once the processing is completed, all messages will show up in the ImageJ log window.
 
-    <center><img width="350" src="res/Fig6.png"></center>
+    <div align="center">
+    <img width="350" src="res/Fig6.png">
+    </div>
     
     <div align="center">
     Fig. 6, an example of the ImageJ log window.
@@ -98,7 +111,9 @@ The [**diSPIMFusion**](https://www.dropbox.com/sh/czn4kwzwcgy0s3x/AADipfEsUSwuCs
 
     **`TMX`**: transformation matrixes of each registration.
 
-    <center><img src="res/Fig7.png"></center>
+    <div align="center">
+    <img src="res/Fig7.png">
+    </div>
 
     <div align="center">
     Fig. 7, output files and folders.
@@ -109,7 +124,9 @@ The [**diSPIMFusion**](https://www.dropbox.com/sh/czn4kwzwcgy0s3x/AADipfEsUSwuCs
 1) If it is the first time for the GPU device to run on the computer, it may take some time (usually less than 5 minutes) to initialize the device. Once the device is initialized, it won’t need initialization next time, even after the computer is restarted. 
 2) Once the CUDA app has been launched by the ImageJ macro, its running is independent on the Fiji or ImageJ anymore. But its running status will be shown as `spimFusionBatch.exe` in system Task Manager, you can kill it there if needed.
 
-    <center><img width="350" src="res/Fig8.png"></center>
+    <div align="center">
+    <img width="350" src="res/Fig8.png">
+    </div>
     
     <div align="center">
     Fig. 8, CUDA app status in Task Manager.
@@ -117,7 +134,9 @@ The [**diSPIMFusion**](https://www.dropbox.com/sh/czn4kwzwcgy0s3x/AADipfEsUSwuCs
 
 3) Users could customize the default parameters by modifying the codes in the ImageJ macro `diSPIMFusion_UI.ijm` as shown in Fig. 9. 
 
-    <center><img width="450" src="res/Fig9.png"></center>
+    <div align="center">
+    <img width="450" src="res/Fig9.png">
+    </div>
     
     <div align="center">
     Fig. 9, parameters customization in ImageJ macro.
@@ -138,7 +157,9 @@ The [**diSPIMFusion**](https://www.dropbox.com/sh/czn4kwzwcgy0s3x/AADipfEsUSwuCs
 
     After running `diSPIMFusion_UI.ijm`, the app `spimFusionBatch.exe` gets idle after processing a few time points on certain diSPIM datasets. E.g., Fig. 10 shows the `ProcessingLog.txt` contents when the app gets stuck at 5th time points (sometimes at the 1st time points) in processing a highNA diSPIM dataset:
 
-    <center><img width="400" src="res/Fig10.png"></center>
+    <div align="center">
+    <img width="400" src="res/Fig10.png">
+    </div>
     
     <div align="center">
     Fig. 10, the CUDA app gets idle during the processing on the 5th time point images.
