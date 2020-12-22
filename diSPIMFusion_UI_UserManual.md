@@ -155,7 +155,7 @@ The [**diSPIMFusion**](https://www.dropbox.com/sh/czn4kwzwcgy0s3x/AADipfEsUSwuCs
 
 7) **A bug** in diSPIMFusion ImageJ macro-based version
 
-    After running `diSPIMFusion_UI.ijm`, the app `spimFusionBatch.exe` gets idle after processing a few time points on certain diSPIM datasets. E.g., Fig. 10 shows the `ProcessingLog.txt` contents when the app gets stuck at 5th time points (sometimes at the 1st time points) in processing a highNA diSPIM dataset:
+    After running `diSPIMFusion_UI.ijm`, the app `spimFusionBatch.exe` occasionally gets idle after processing a few time points on some certain diSPIM datasets. E.g., Fig. 10 shows the `ProcessingLog.txt` log messages when the app gets stuck at 5th time point (sometimes at the 1st time point) in processing a highNA diSPIM dataset:
 
     <div align="center">
     <img width="400" src="res/Fig10.png">
