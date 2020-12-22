@@ -174,7 +174,7 @@ The [**diSPIMFusion**](https://www.dropbox.com/sh/czn4kwzwcgy0s3x/AADipfEsUSwuCs
     **Temporary solutions:**
 
     - run `diSPIMFusion_UI.ijm`, if the processing gets stuck, close Fiji, then `spimFusionBatch.exe` resumes running.
-    - use command line, e.g. `cmd_spimFusionBatch.bat`, to run to batch processing instead of ImageJ macro-based version.
+    - use command line, e.g. `cmd_spimFusionBatch.bat`, to run batch processing instead of ImageJ macro-based version.
 
 
 
