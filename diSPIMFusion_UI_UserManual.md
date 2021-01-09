@@ -3,7 +3,7 @@ User Manual for diSPIMFusion
 
 ## Overview
 
-The [**diSPIMFusion**](https://www.dropbox.com/sh/czn4kwzwcgy0s3x/AADipfEsUSwuCsEBg8P7wc4_a?dl=0) (ImageJ macro-based) is a portable software package that performs registration and joint deconvolution on the two view images acquired by diSPIM microscope. The software package contains an ImageJ macro `diSPIMFusion_UI.ijm`, several CUDA/C++ executable applications, and PSFs for the diSPIM microscope. Basically, the ImageJ macro creates a user interface for parameter configuration and calls the executable applications which complete all the processing based on GPU device. 
+The [**diSPIMFusion**](https://github.com/eguomin/diSPIMFusion/releases) (ImageJ macro-based) is a portable software package that performs registration and joint deconvolution on the two view images acquired by diSPIM microscope. The software package contains an ImageJ macro `diSPIMFusion_UI.ijm`, several CUDA/C++ executable applications, and PSFs for the diSPIM microscope. Basically, the ImageJ macro creates a user interface for parameter configuration and calls the executable applications which complete all the processing based on GPU device. 
 
 **System Requirements**. To run the software, the PC needs to have:
 
