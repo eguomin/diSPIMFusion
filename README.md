@@ -18,7 +18,7 @@ As an example, we provide [a ImageJ macro code](diSPIM_Preprocessing.ijm) along 
 - Deskewing: optionally for stage-scan data.
 - ROI cropping: to make the images initially aligned and/or more compact to save processing time and storage.
 - Maximum intensity projection (MIP).
-- 3D orentation: SPIMB image rotation and interpolation.
+- 3D orientation: SPIMB image rotation and interpolation.
 
 This works within Fiji that has ImageJ version 1.48c or later, on a PC with Windows 7 or 10 OS. Tested environment: Fiji(Life-Line version, 2013 July 15), Windows 7 and 10.
 
@@ -28,7 +28,7 @@ Depending on the microscope control software (Micro-Manager or LabVIEW) and the 
 
 The fusion of the dual-view images mainly includes the image registration and joint deconvolution, and is computational heavy. So GPU-based parallel computing has been developed using C/C++ and CUDA, and compiled to console applications at the user level. Along with a few other macros/scripts, the applications are deployed as a ready-to-use portable package [diSPIMFusion](https://github.com/eguomin/diSPIMFusion/releases), including:
 
-- 3D orentation: image rotation and interpolation.
+- 3D orientation: image rotation and interpolation.
 - Image registration.
 - Joint deconvolution.
 - Maximum intensity projection (MIP): choices for 2D and 3D MIP.
