@@ -63,7 +63,7 @@ The default settings are configured for the test data, users can also customize 
 
 #### (Option 2) Command line based interface
 
-The applications can be directly launched by commands via the Windows or Linux terminal. Users may find the applications in the folder `/diSPIMFusion/cudaLib/bin` for Windows and Linux platforms. The `spimFusionBatch` (also used in the ImageJ macro-based option) processes time-lapse images, users may refer to the user manual for ImageJ macro option. For other applications, users can use command with option `-h` or `-help` to find the introduction and manual for each application, e.g.
+The applications can be directly launched by commands via the Windows or Linux terminal. Users may find the applications in the folder `/diSPIMFusion/cudaLib/bin` for Windows and Linux platforms. The `spimFusionBatch` (also used in the ImageJ macro-based option) processes time-lapse images, users may refer to the user manual for ImageJ macro option. For all applications, users can use command with option `-h` or `-help` to find the introduction and manual for each application, e.g.
 
 ```posh
 spimFusionBatch -h
